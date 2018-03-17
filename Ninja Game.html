@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Go Ninja!</title>
+</head>
+
+    <body>
+        <div id='background'>
+            <div id='character' style='position:absolute; top:100px; left:450px; background-image: url("img/down1.png"); width:59px; height:86px;'></div>
+        </div>
+        <script type="text/javascript">
+            var leftValue = 450, topValue = 100, direction = 'down', walkVal = 1;
+            
+            function update(){
+                document.getElementById("character").style.left = leftValue+"px";
+                document.getElementById("character").style.top = topValue+"px";
+                document.getElementById("character").style.backgroundImage ="url(img/"+direction+walkVal+".png)";
+            }
+            document.onkeydown = function(e) {
+                console.log('e: ', e); 
+                console.log('e.keyCode: ', e.keyCode);
+                if (walkVal == 1) {
+                	walkVal = 2;
+                }
+                else if (walkVal == 2) {
+                	walkVal = 1;
+                }
+                if (e.keyCode == 37 && leftValue > 0) { // LEFT
+                    leftValue = leftValue - 10;
+                    direction = 'left';
+                }
+                else if (e.keyCode == 39 && leftValue < 700) { // RIGHT
+                    leftValue = leftValue + 10;
+                    direction = 'right';         
+                }
+                else if (e.keyCode == 40 && topValue < 600) { // DOWN
+                    topValue = topValue + 10;
+                    direction = 'down';
+                }
+                else if (e.keyCode == 38 && topValue > 0) { //UP
+            		topValue -= 10;
+            		direction = 'top';
+                }
+                
+                update();
+            }
+        </script>
+      
+
+    </body>
+</html>
