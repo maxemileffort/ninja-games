@@ -2,8 +2,28 @@
     margin: 0;
     padding: 0;
 }
+div {
+    margin: 0;
+}
+.title {
+    position: absolute;
+    left: 20px;
+    top: 435px;
+}
+.score {
+    position: absolute;
+    left: 180px;
+    top: 444px;
+}
+.lives {
+    position: absolute;
+    left: 20px;
+    top: 466px;
+}
 .row {
     line-height: 0;
+    padding: 0;
+    margin: 0;
 }
 .wall {
     background-color: blue;
@@ -43,4 +63,15 @@
     position: absolute;
     left: 40px;
     top: 40px;
+}
+#bluey {
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-image: url('img/bluey.gif');
+    background-size: contain;
+    position: absolute;
+    left: 40px;
+    top: 360px;
 }
